@@ -1,24 +1,25 @@
 /*
  * main.cpp
  *
- *  Created on: 25 авг. 2015 г.
+ *  Created on: 25 пїЅпїЅпїЅ. 2015 пїЅ.
  *      Author: OmeZ
  */
 
-
 #include "motor.h"
 #include <avr/io.h>
+#include <util/delay.h>
 
 int main() {
-	DDRB |= (1 << PORTB0);
-		PORTB &= ~(1 << PORTB0);
-		PORTB |= (1 << PORTB0);
 
 	Motor::init();
+	Motor::start();
 
-
-
-	while (true) {}
+	unsigned short i=0;
+	while (true) {
+		_delay_ms(100);
+		i++;
+		Motor::setTorque(i);
+	}
 
 	return 0;
 }

@@ -1,7 +1,7 @@
 /*
  * motor.h
  *
- *  Created on: 25 àâã. 2015 ã.
+ *  Created on: 25 ï¿½ï¿½ï¿½. 2015 ï¿½.
  *      Author: OmeZ
  */
 
@@ -11,9 +11,6 @@
 
 class Motor {
 
-private:
-	static unsigned char power;
-
 public:
 
 	static void init();
@@ -22,7 +19,7 @@ public:
 
 	static void stop();
 
-	static void setPower(unsigned char power);
+	static void setTorque(unsigned char power);
 
 };
 
