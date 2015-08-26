@@ -10,7 +10,23 @@
 #include <avr/io.h>
 
 
-void Motor::init() {}
+unsigned char Motor::power = 255;
+
+void Motor::init() {
+	//setPower(255);
+
+	DDRB |= (1 << PORTB0);
+	PORTB &= ~(1 << PORTB0);
+	PORTB |= (1 << PORTB0);
+
+
+	TCCR0A |= (1 << COM0A0);
+	TCCR0A |= (1 << WGM01) | (1<< WGM00);
+
+	OCR0A = 0x0F;
+
+	return;
+}
 
 void Motor::start() {}
 
