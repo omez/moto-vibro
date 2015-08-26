@@ -1,7 +1,7 @@
 /*
  * audio.cpp
  *
- *  Created on: 25 авг. 2015 г.
+ *  Created on: 25 пїЅпїЅпїЅ. 2015 пїЅ.
  *      Author: OmeZ
  */
 
@@ -14,5 +14,13 @@ uint8_t get_audio_level() {
 	return 0;
 }
 
+
+
+
+void init_adc() {
+
+
+
+}
 
 

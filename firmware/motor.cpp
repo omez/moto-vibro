@@ -19,7 +19,7 @@ void Motor::init() {
 
 	// Setup timer as FastPWM mode on OCR0A
 	// set prescaler to clk / 256
-	TCCR0B |= (1 << CS02) | (0<< CS01) | (0<< CS00);
+	TCCR0B |= (0 << CS02) | (1 << CS01) | (1 << CS00);
 
 	// Set weveform generation mode to
 	// 0 1 1	Fast PWM
