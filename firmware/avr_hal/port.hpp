@@ -81,6 +81,7 @@ public:\
 	enum{Width=sizeof(DataT)*8};\
 };
 
+namespace AvrHal {
 
 template<class PORT, uint8_t PIN> class TPin {
 public:
@@ -92,16 +93,18 @@ public:
 		PORT::set(1 << PIN);
 	}
 	static void set(uint8_t val) {
-		if (val)
+		if (val) {
 			set();
-		else
+		} else {
 			clear();
+		}
 	}
 	static void setDir(uint8_t val) {
-		if (val)
+		if (val) {
 			setDirWrite();
-		else
+		} else {
 			setDirRead();
+		}
 	}
 	static void clear() {
 		PORT::clear(1 << PIN);
@@ -119,5 +122,5 @@ public:
 		return PORT::pinRead() & (uint8_t) (1 << PIN);
 	}
 };
-
+}
 #endif /* AVR_HAL_PORT_HPP_ */

@@ -10,20 +10,34 @@
 
 #include "port.hpp"
 
-typedef void TButtonCallback(void);
+namespace AvrHal {
 
-template <class TPin, TButtonCallback singleClickCallback> class TButton {
+//typedef void TButtonCallback(void);
+
+//void TButtonCallbackNoop() {};
+
+template <
+	class TPin
+	//TButtonCallback singleClickCallback = TButtonCallbackNoop,
+	//TButtonCallback doubleClickCallback = TButtonCallbackNoop,
+	//TButtonCallback longClickCallback = TButtonCallbackNoop
+> class TButton {
+
+
+private:
+
+	char events[1];
 
 public:
 
-	static void singleClick() {
-		singleClickCallback();
+	static void update() {
+
 	}
 
-	static void doubleClick() {}
-
-	static void longClick() {}
-
 };
+
+
+
+}
 
 #endif /* AVR_HAL_BUTTON_HPP_ */
